@@ -21,7 +21,8 @@ const swaggerOptions = {
       description: 'Documentación de la API de Héroes, Villanos y Batallas',
     },
     servers: [
-      { url: 'http://localhost:3001' }
+      // Si está en producción, usa la URL de Render; si no, usa localhost
+      { url: process.env.NODE_ENV === 'production' ? 'https://render-hekl.onrender.com' : 'http://localhost:3001' }
     ],
     components: {
       securitySchemes: {
